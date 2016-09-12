@@ -181,19 +181,34 @@ The Yang and Rabkin article talks mainly about general-purpose languages. In
 what ways do the themes apply to the study and creation of DSLs?
 
 **Response**
-- Outline: 
-- DSLs might be considered "noob" languages because of fluency/complexity/
- restricted domain, simplicity of use, userbase
-- R is an example of a DSL mentioned in the article and how it's looked
-  down upon as not real programming
-- People who use general purpose languages look down on more specific
-  ones because of the different userbase
-- Different userbases having cultural biases against others can influence
-  how languages for different domains are thought of
-- People probably think of the creation of DSLs to be "manly" because
-  building the infrastructure is hard, but users of the DSL have all of 
-  that work done for them
 
+As the title of the article, “C is Manly and Python is For n00bs”
+[Yang and Rabkin 2015] suggests, higher-level and less complex languages may
+be looked down upon culturally. This bias most likely applies to many DSLs
+as well because DSLs often have more limited, specialized syntax. However, 
+that limitation of  a DSL may not be the only reason it would be looked down 
+upon based on Yang and Rabkin. One of the points made in Yang and Rabkin is 
+that “programmers confuse their strong views about languages with their views 
+about users of the languages” [Yang and Rabkin 2015]. This suggests another 
+reason why DSLs might be looked down upon by the larger programming community. 
+Because DSLs have a specific domain, they might have users who are not 
+stereotypical programmers and therefore looked down upon. There is even an 
+example of DSL that is looked down on for this exact reason in Yang and Rabkin, 
+“Software engineers sometimes deride statistical analysis languages like R or 
+SAS as ‘not real programming’ ” [Yang and Rabkin 2015]. Like other DSLs, R is 
+not typically used by software engineers and that likely contributes to the 
+bias against it. As described in the article, “Languages often spread in 
+disjoint real-world communities, making it easy for false perceptions to 
+arise about a language’s user base” [Yang and Rabkin 2015]. This probably 
+applies to DSLs even more so than for other languages since DSLs are often 
+targeted at a specific group of users. 
+
+Another aspect of DSLs that this article may touch on is their creation. 
+Creating a DSL might be regarded as “manly” since it is challenging and 
+might be done in a language like C, which is “Manly” [Yang and Rabkin 2015].
+A DSL also implies that someone took the trouble to make things (probably) 
+easier for the user of the language, which is in line with the language
+being looked down upon in the same way Python might be. 
 
 ---
 
@@ -225,18 +240,37 @@ you do so? If not, why not?
 
 **Response**
 
-Outline
-- As long as we go in the grain of natural languages, it may be more readable,
-but it needs to still have the structure and exact rules of a more typical
-programming language
-- Talk about how novices found natural language simpler but we didn't,
-which is in line with the above quote. 
-- In a DSL, more limited applications may mean that the permissiveness
-of natural language is less problematic?
-- Doesn't completely conflict because Pavlos mostly talks about reading
-  the language than writing the language - references to greek and klingon
-- Go into more detail about the specifics of the "novices" referred to in
-Pavlus and how they were instructed by looking at the study cited
+It may be possible to have a language be in the same "grain" as a natural 
+language without actually having the associated ambiguity. If it has a 
+well defined structure and syntax, then the flexibility described in the
+excerpt above may not be an issue.
+
+In Pavlus, it is described that "finding natural-lanaguge replacements for 
+some of the more abstruse syntax went a long way" [Pavlus 2012]. At first
+glance, this seems to be a direct contradiction to the expriment described
+in the above quote from Cook. However, in the case of Pavlus, novices were
+the ones being expiremented on. For us, the more natural language-like 
+syntax in Pavlus was less easy to understand than the Java syntax. In Cook, 
+programmers were the ones using the natural language rather than novices.
+It would be interesting to perform an expiriment about whether novices
+or experienced programmers have more or less trouble with a specific 
+natural language-like programming language. 
+
+Additionally, in Pavlus, there was more focus on the readability of the
+language rather than the writing - according to Pavlus, 
+"```integer i = 0
+repeat 10 times
+i = i + 1
+end ```
+That still looks mostly like Greek to me, but Stefik compares it to this equivalent statement in Java ("which is similar to Perl is some ways," he says):
+
+```for(int i = 0; i < 10; i++) {
+}```
+That's not Greek, it's Kligon.
+" [Pavlus 2012]. In both Pavlus and Cook, the code that resembled natural language
+was easier to read than the more standard programming language. This raises a 
+question about whether it is possible to strike a balance between that readability
+and the stricter structure apparently necessary. 
 
 ---
 
