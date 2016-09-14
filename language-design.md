@@ -30,16 +30,20 @@ underlying principles. An example is passing by reference. In C, you must
 explicitly pass a reference to a variable, whereas in Python you simply
 pass a parameter. 
 
-"```integer i = 0
+
+```
+integer i = 0
 repeat 10 times
 i = i + 1
-end ```
+end 
+```
 That still looks mostly like Greek to me, but Stefik compares it to this equivalent 
 statement in Java ("which is similar to Perl is some ways," he says):
 ```
 for(int i = 0; i < 10; i++) {
-} ```
-That’s not Greek, it’s Klingon" [Pavlus, 2012] 
+} 
+```
+That’s not Greek, it’s Klingon [Pavlus, 2012] 
 
 To us as programmers, the second example of Java code is far clearer. The 
 more English-y syntax of the Quorum example may be clearer to someone
@@ -258,14 +262,19 @@ natural language-like programming language.
 
 Additionally, in Pavlus, there was more focus on the readability of the
 language rather than the writing - according to Pavlus, 
-"```integer i = 0
+"
+```
+integer i = 0
 repeat 10 times
 i = i + 1
-end ```
+end 
+```
 That still looks mostly like Greek to me, but Stefik compares it to this equivalent statement in Java ("which is similar to Perl is some ways," he says):
 
-```for(int i = 0; i < 10; i++) {
-}```
+```
+for(int i = 0; i < 10; i++) {
+}
+```
 That's not Greek, it's Kligon.
 " [Pavlus 2012]. In both Pavlus and Cook, the code that resembled natural language
 was easier to read than the more standard programming language. This raises a 
