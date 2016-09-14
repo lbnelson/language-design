@@ -31,19 +31,20 @@ explicitly pass a reference to a variable, whereas in Python you simply
 pass a parameter. 
 
 
-```
-integer i = 0
-repeat 10 times
-i = i + 1
-end 
-```
-That still looks mostly like Greek to me, but Stefik compares it to this equivalent 
-statement in Java ("which is similar to Perl is some ways," he says):
-```
-for(int i = 0; i < 10; i++) {
-} 
-```
-That’s not Greek, it’s Klingon [Pavlus, 2012] 
+>```
+>integer i = 0
+>repeat 10 times
+>i = i + 1
+>end 
+>```
+>That still looks mostly like Greek to me, but Stefik compares it to this equivalent 
+>statement in Java ("which is similar to Perl is some ways," he says):
+>```
+>for(int i = 0; i < 10; i++) {
+>} 
+>```
+>That’s not Greek, it’s Klingon 
+[Pavlus, 2012] 
 
 To us as programmers, the second example of Java code is far clearer. The 
 more English-y syntax of the Quorum example may be clearer to someone
@@ -98,7 +99,8 @@ doesn’t do what users think it will, bugs will result." [Bloch 2006].
 The same logically extends to a programming language. In a talk called Wat 
 by Gary Bernhardt at CodeMash 2012, he provides examples of astonishing 
 behavior. In JavaScript, ` [] + [] ` produces the empty string 
-[Bernhardt, 2012]. This, both according to the talk, and according to us makes
+[[Bernhardt, 2012]](https://www.destroyallsoftware.com/talks/wat). 
+This, both according to the talk, and according to us makes
 absolutely no sense. 
 
 ---
@@ -159,6 +161,7 @@ Outline:
 - APIs should be self documenting but this completely translated to
   all languages because even Python takes some hand holding (pavlos)
 - An API is kind of like a small language as described by Steele
+
 ---
 
 **Question**
