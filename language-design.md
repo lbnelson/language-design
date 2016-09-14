@@ -17,8 +17,8 @@ For each quote, describe what it was about the quote that led you pick it.
 
 **Response**
 
-"It is one thing to have learned the syntax of a language and another to have 
-grasped the underlying paradigm" [Yang and Radkin, 2015]
+> It is one thing to have learned the syntax of a language and another to have 
+> grasped the underlying paradigm [Yang and Radkin, 2015]
 
 We agree with this quote from _C is Manly, Python is for "n00bs": How False
 Stereotypes Turn Into Technical "Truths"_ for the most part, but in the case
@@ -53,9 +53,10 @@ unfamiliar with programming. The Java code is a form of shorthand for the
 Quorum, and if you use a phrase enough times shorthand becomes quicker
 and easier to understand. 
 
-"A cathedral is a huge church. It may be made of stone; it may fill you with
-awe; but the key thought, in the mind of Eric Raymond, is that there is but
-one design, one grand plan, which may take a long time—many years—to make real"
+> A cathedral is a huge church. It may be made of stone; it may fill you with
+> awe; but the key thought, in the mind of Eric Raymond, is that there is but
+> one design, one grand plan, which may take a long time—many years—to make 
+> real
 [Steele, 1998]
 
 This was a very appropriate metaphor for beginning to learn programming. 
