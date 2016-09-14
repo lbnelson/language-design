@@ -31,19 +31,20 @@ explicitly pass a reference to a variable, whereas in Python you simply
 pass a parameter. 
 
 
->```
->integer i = 0
->repeat 10 times
->i = i + 1
->end 
->```
->That still looks mostly like Greek to me, but Stefik compares it to this equivalent 
->statement in Java ("which is similar to Perl is some ways," he says):
->```
->for(int i = 0; i < 10; i++) {
->} 
->```
->That’s not Greek, it’s Klingon 
+> ```
+> integer i = 0
+> repeat 10 times
+> i = i + 1
+> end 
+> ```
+> That still looks mostly like Greek to me, but Stefik compares it to this 
+> equivalent statement in Java ("which is similar to Perl is some ways," he 
+> says):
+> ```
+> for(int i = 0; i < 10; i++) {
+> } 
+> ```
+> That’s not Greek, it’s Klingon 
 [Pavlus, 2012] 
 
 To us as programmers, the second example of Java code is far clearer. The 
@@ -96,7 +97,7 @@ lines up with expected behavior. Bloch mentions that a good API should
 "Obey the principle of least astonishment. Every method should
 do the least surprising thing it could, given its name. If a method
 doesn’t do what users think it will, bugs will result." [Bloch 2006]. 
-The same logically extends to a programming language. In a talk called Wat 
+The same logically extends to a programming language. In a talk called _Wat_ 
 by Gary Bernhardt at CodeMash 2012, he provides examples of astonishing 
 behavior. In JavaScript, ` [] + [] ` produces the empty string 
 [[Bernhardt, 2012]](https://www.destroyallsoftware.com/talks/wat). 
@@ -146,21 +147,42 @@ In what way is an API a language?
 
 **Response**
 
-Outline:
-- Refer to Bloch
-	- Similar principles for a good language as for a good api
-	- "Code will read like prose" backs up the way an api is 
-	in a sense a language
-	- inner workings of a language are obscured in the same way
-	  inner workings of a good api should be
-	- Connect things Bloch mentions to ideas for intuitiveness
-	  in Pavlos
-	- API as an extension of a language (bring in Steele)
-- Ways in which an API is not like a language - public API versus
-  growing language
-- APIs should be self documenting but this completely translated to
-  all languages because even Python takes some hand holding (pavlos)
-- An API is kind of like a small language as described by Steele
+In _How to Design a Good API and Why it Matters_, Bloch lists maxims for 
+designing a good API. Many of these maxims also apply to languages. In one
+of these maxims, he states "If you get an API right, code will read like
+prose" [Bloch, 2006]. So similar to a language, an API should have fluency.
+
+Bloch also mentions that "When in doubt, leave it out" [Bloch, 2006]. This
+is similar to Steele's claim that a growable language should not have too
+many features. While Bloch states that "You have one chance to get [a public
+API] right", he also says that "You can always add things later" [Bloch, 2006].
+In this sense, an API — like a language — can grow. In fact, an API can be seen
+as an extension of a growing language, so it inherits some properties of the
+platform it is built on. Due to the same maxim, "When in doubt, leave it out[,]"
+an API shares commonalities with a "small language" as Steele defines it. It 
+has a small set of vocabulary which programmers can apply with some 
+degree of fluency.
+
+Bloch lists several maxims that relate to creating an intuitive API.
+"Names matter" and "the principle of least astonishment".
+This goes hand in hand with Pavlus's argument for languages that "were 
+better-designed" [Pavlus, 2012].
+However, this may also be an example of how an API is _not_ like a language.
+Pavlus mentions multiple common programming languages — such as Perl and Java —
+are not intuitive, as "The broad computer science academic community has not 
+paid a tremendous amount of attention to programming language usability"
+[Pavlus, 2012].
+It seems like an API strives to be intuitive more than a language does.
+This is probably an easier goal for an API to aim for since an API designer
+can assume a level of competence in whatever language the API uses in the 
+users of the API.
+
+Another way that an API is not like a language is that an API is expected to be
+self-documenting, "it should rarely require documentation to read code written
+to a good API" [Bloch, 2006]. While a programmer who has never used an API
+before should be able to understand code written to it, the same may not be
+true for a programmer reading a language that is completely new to them.
+
 
 ---
 
@@ -170,15 +192,34 @@ What does the post on grayscale tell us about the process of API design?
 
 **Response**
 
-- Target audience is important
-- Doing the intuitive thing is important but it's hard to determine
-  what is the most intuitive (bring in Pavlos)
-- Growing an API like a language is a consideration (bring in Steele)
-- Naming things is key and different people have different opinions
-  on what a name should be 
-- Principles in bloch are not as easy to follow as they sound
-- Reference Bloch a lot in relation to the reality of designing
- an API according to the grayscale post
+When designing an API, one should have a specific target user-base in mind so
+that one can make design decisions that cater to this user-base. 
+For example, a grayscale function that "also accepts numbers from 0-255" 
+[Verou, 2014].
+This range of numbers would seem completely arbitrary to a beginner programmer.
+However, presumably because the intended users of this API are programmers
+that are familiar with RGB values, this range makes sense.
+Verou even uses this familiarity to argue for naming the function `rgb()`.
+"The benefit is that authors are already accustomed to using rgb() for colors"
+[Verou, 2014].
+
+The goal of naming this function is to pick a name that is intuitive and
+"consistent with author expectations" [Verou, 2014]. 
+But determining which name is most intuitive is difficult.
+The comments seem to indicate that people have very differing naming 
+preferences, no option is a clear winner.
+In fact, many suggest their own option for naming this function.
+It seems that Verou's method of taking a poll is be the best way of determining
+intuitiveness, which is unfortunate as not everybody has the option or means
+to take a poll for every contentious design decision. 
+
+Many maxims that Bloch lists in _How to Design a Good API and Why It
+Matters_ [Bloch, 2006] look like common sense. 
+But it can be difficult to make design choices that best adhere to these maxims.
+Upon initial reading, "Names matter. Strive for intelligibility, consistency, 
+and symmetry" seems simple and really obvious.
+But after reading Verou's post, it becomes clear that even simple functions
+can be difficult to name.
 
 ---
 
@@ -189,7 +230,7 @@ what ways do the themes apply to the study and creation of DSLs?
 
 **Response**
 
-As the title of the article, “C is Manly and Python is For n00bs”
+As the title of the article, _C is Manly and Python is For n00bs_
 [Yang and Rabkin 2015] suggests, higher-level and less complex languages may
 be looked down upon culturally. This bias most likely applies to many DSLs
 as well because DSLs often have more limited, specialized syntax. However, 
@@ -252,34 +293,35 @@ language without actually having the associated ambiguity. If it has a
 well defined structure and syntax, then the flexibility described in the
 excerpt above may not be an issue.
 
-In Pavlus, it is described that "finding natural-lanaguge replacements for 
+In Pavlus, it is described that "finding natural-language replacements for 
 some of the more abstruse syntax went a long way" [Pavlus 2012]. At first
-glance, this seems to be a direct contradiction to the expriment described
+glance, this seems to be a direct contradiction to the experiment described
 in the above quote from Cook. However, in the case of Pavlus, novices were
-the ones being expiremented on. For us, the more natural language-like 
+the ones being experimented on. For us, the more natural language-like 
 syntax in Pavlus was less easy to understand than the Java syntax. In Cook, 
 programmers were the ones using the natural language rather than novices.
-It would be interesting to perform an expiriment about whether novices
+It would be interesting to perform an experiment about whether novices
 or experienced programmers have more or less trouble with a specific 
 natural language-like programming language. 
 
 Additionally, in Pavlus, there was more focus on the readability of the
 language rather than the writing - according to Pavlus, 
-"
-```
-integer i = 0
-repeat 10 times
-i = i + 1
-end 
-```
-That still looks mostly like Greek to me, but Stefik compares it to this equivalent statement in Java ("which is similar to Perl is some ways," he says):
+> ```
+> integer i = 0
+> repeat 10 times
+> i = i + 1
+> end 
+> ```
+> That still looks mostly like Greek to me, but Stefik compares it to this equivalent 
+> statement in Java ("which is similar to Perl is some ways," he says):
+> ```
+> for(int i = 0; i < 10; i++) {
+> } 
+> ```
+> That’s not Greek, it’s Klingon 
+[Pavlus, 2012] 
 
-```
-for(int i = 0; i < 10; i++) {
-}
-```
-That's not Greek, it's Kligon.
-" [Pavlus 2012]. In both Pavlus and Cook, the code that resembled natural language
+In both Pavlus and Cook, the code that resembled natural language
 was easier to read than the more standard programming language. This raises a 
 question about whether it is possible to strike a balance between that readability
 and the stricter structure apparently necessary. 
@@ -291,6 +333,7 @@ and the stricter structure apparently necessary.
 Briefly describe how you split up the work for this assignment.
 
 **Response**
+
 We both did the readings while in the same location. 
 For the first several questions, we constructed answers together and for the
 remaining questions we first wrote outlines and then divided them up
